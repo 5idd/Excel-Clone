@@ -234,31 +234,29 @@ body {
     min-width: 120px;
     border-right: 2px solid lightgray;
     border-bottom: 2px solid lightgray;
-    display: flex;
-    align-items: center;
     outline-color: #107c41;
 }
 
-.input-cell.selected{
+.input-cell.selected {
     border: 2px solid #107c41;
     background-color: white;
 }
 
 /* cell selection */
 
-.input-cell.top-cell-selected{
-    border-top:none;
+.input-cell.top-cell-selected {
+    border-top: none;
 }
 
-.input-cell.bottom-cell-selected{
+.input-cell.bottom-cell-selected {
     border-bottom: 2px solid lightgray;
 }
 
-.input-cell.left-cell-selected{
+.input-cell.left-cell-selected {
     border-left: none;
 }
 
-.input-cell.right-cell-selected{
+.input-cell.right-cell-selected {
     border-right: 2px solid lightgray;
 }
 
