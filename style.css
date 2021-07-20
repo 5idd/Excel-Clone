@@ -74,49 +74,53 @@ body {
     cursor: pointer;
 }
 
-.font-style-selector #lobster {
+.font-family-selector #lobster {
     font-family: 'Lobster', cursive;
 }
 
-.font-style-selector #arial {
+.font-family-selector #arial {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.font-style-selector #lora {
+.font-family-selector #lora {
     font-family: 'Lora', serif;
 }
 
-.font-style-selector #caveat {
+.font-family-selector #caveat {
     font-family: 'Caveat', cursive;
 }
 
-.font-style-selector #raleway {
+.font-family-selector #raleway {
     font-family: 'Raleway', sans-serif;
 }
 
-.font-style-selector #orbitron {
+.font-family-selector #orbitron {
     font-family: 'Orbitron', sans-serif;
 }
 
-.font-style-selector #montserrat {
+.font-family-selector #montserrat {
     font-family: 'Montserrat', sans-serif;
 }
 
-.font-style-selector #pacifico {
+.font-family-selector #pacifico {
     font-family: 'Pacifico', cursive;
 }
 
-.font-style-selector #roboto {
+.font-family-selector #roboto {
     font-family: 'Roboto', sans-serif;
 }
 
-.font-style-selector, .font-size-selector {
+.font-family-selector, .font-size-selector {
     padding: 4px;
     margin: 0px 8px;
 }
 
-.font-style-selector, .font-size-selector option {
+.font-family-selector, .font-size-selector option {
     font-size: 1.05rem;
+}
+
+.font-family-selector {
+    font-family: "arial";
 }
 
 .selected {
@@ -125,6 +129,20 @@ body {
 
 .selected:hover {
     background-color: lightgray;
+}
+
+.color-picker {
+    position: absolute;
+    width: 25px;
+    height: 12px;
+    border: none;
+    padding: 0;
+    top: 22px;
+    right: 7px;
+}
+
+.icon-color-fill, .icon-color-text {
+    position: relative;
 }
 
 /* formula bar-------------------------------- */
@@ -235,6 +253,8 @@ body {
     border-right: 2px solid lightgray;
     border-bottom: 2px solid lightgray;
     outline-color: #107c41;
+    font-size: 14px;
+    font-family: "Arial";
 }
 
 .input-cell.selected {

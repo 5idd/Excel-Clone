@@ -4,10 +4,10 @@ let defaultProperties = {
     "font-style": "",
     "text-decoration": "",
     "text-align": "left",
-    "background-color": "white",
-    "color": "black",
-    "font-family": "Arial",
-    "font-size": 14
+    "background-color": "#ffffff",
+    "color": "#000000",
+    "font-family": "arial",
+    "font-size": "14px"
 }
 
 let cellData = {
@@ -130,6 +130,11 @@ function changeHeader(ele) {
     let alignment = cellInfo["text-align"];
     $(".align-icon.selected").removeClass("selected");
     $(".icon-align-" + alignment).addClass("selected");
+    $(".background-color-picker").val(cellInfo["background-color"]);
+    $(".text-color-picker").val(cellInfo["color"]);
+    $(".font-family-selector").val(cellInfo["font-family"]);
+    $(".font-family-selector").css("font-family", cellInfo["font-family"]);
+    $(".font-size-selector").val(cellInfo["font-size"]);
 
 }
 
@@ -142,6 +147,7 @@ $(".input-cell").dblclick(function () {
 
 $(".input-cell").blur(function () {
     $(".input-cell.selected").attr("contenteditable", "false"); //focus hatne p contenteditable false ho jae...
+    updateCell("text", $(this).text())
 })
 
 $(".input-cell-container").scroll(function () {
@@ -229,3 +235,30 @@ $(".icon-align-right").click(function () {
 
 
 //----------------------------------------------------------------------------
+
+
+$(".color-fill-icon").click(function () {
+    $(".background-color-picker").click();
+})
+
+$(".color-fill-text").click(function () {
+    $(".text-color-picker").click();
+})
+
+$(".background-color-picker").change(function () {
+    updateCell("background-color", $(this).val())
+})
+
+$(".text-color-picker").change(function () {
+    updateCell("color", $(this).val())
+})
+
+$(".font-family-selector").change(function () {
+    updateCell("font-family", $(this).val())
+    $(".font-family-selector").css("font-family", $(this).val());
+})
+
+$(".font-size-selector").change(function () {
+    updateCell("font-size", $(this).val())
+})
+
