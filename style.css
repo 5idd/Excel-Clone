@@ -312,3 +312,36 @@ body {
 .sheet-bar-plus:hover {
     transform: scale(1.1);
 }
+
+.icon-add {
+    color: #107c41
+}
+
+.sheet-tab-container {
+    display: flex;
+}
+
+.sheet-tab {
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    width: 80px;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    border-right: 1px solid lightgray;
+}
+
+.sheet-tab.selected {
+    border-bottom: 4px solid#107c41;
+}
+
+.sheet-tab:hover {
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+.sheet-tab.selected:hover {
+    cursor: default;
+    background-color: #fff;
+}

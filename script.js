@@ -16,6 +16,7 @@ let cellData = {
 
 let selectedSheet = "Sheet1";
 let totalSheets = 1;
+let lastlyAddedSheet = 1;
 
 
 
@@ -262,3 +263,69 @@ $(".font-size-selector").change(function () {
     updateCell("font-size", $(this).val())
 })
 
+function emptySheet() {
+    let sheetInfo = cellData[selectedSheet];
+    for (let i of Object.keys(sheetInfo)) {
+        for (let j of Object.keys(sheetInfo[i])) {
+            $(`#row-${i}-col-${j}`).text("");
+            $(`#row-${i}-col-${j}`).css("background-color", "#ffffff");
+            $(`#row-${i}-col-${j}`).css("color", "#000000");
+            $(`#row-${i}-col-${j}`).css("text-align", "left");
+            $(`#row-${i}-col-${j}`).css("font-weight", "");
+            $(`#row-${i}-col-${j}`).css("font-style", "");
+            $(`#row-${i}-col-${j}`).css("text-decoration", "");
+            $(`#row-${i}-col-${j}`).css("font-family", "Arial");
+            $(`#row-${i}-col-${j}`).css("font-size", "14px");
+        }
+    }
+}
+
+function loadSheet() {
+    let sheetInfo = cellData[selectedSheet];
+    for (let i of Object.keys(sheetInfo)) {
+        for (let j of Object.keys(sheetInfo[i])) {
+            let cellInfo = cellData[selectedSheet][i][j];
+            $(`#row-${i}-col-${j}`).text(cellInfo["text"]);
+            $(`#row-${i}-col-${j}`).css("background-color", cellInfo["background-color"]);
+            $(`#row-${i}-col-${j}`).css("color", cellInfo["color"]);
+            $(`#row-${i}-col-${j}`).css("text-align", cellInfo["text-align"]);
+            $(`#row-${i}-col-${j}`).css("font-weight", cellInfo["font-weight"]);
+            $(`#row-${i}-col-${j}`).css("font-style", cellInfo["font-style"]);
+            $(`#row-${i}-col-${j}`).css("text-decoration", cellInfo["text-decoration"]);
+            $(`#row-${i}-col-${j}`).css("font-family", cellInfo["font-family"]);
+            $(`#row-${i}-col-${j}`).css("font-size", cellInfo["font-size"]);
+        }
+    }
+}
+
+
+$(".icon-add").click(function () {
+    emptySheet();
+    $(".sheet-tab.selected").removeClass("selected")
+    let sheetName = "Sheet" + (lastlyAddedSheet + 1);
+    cellData[sheetName] = {};
+    totalSheets += 1;
+    lastlyAddedSheet += 1;
+    selectedSheet = sheetName;
+    $(".sheet-tab-container").append(`<div class="sheet-tab selected">${sheetName}</div>`)
+    $(".sheet-tab.selected").click(function () {
+        if (!$(this).hasClass("selected")) {
+            selectSheet(this);
+        }
+    })
+})
+
+
+$(".sheet-tab").click(function () {
+    if (!$(this).hasClass("selected")) {
+        selectSheet(this);
+    }
+})
+
+function selectSheet(ele) {
+    $(".sheet-tab-selected").removeClass("selected");
+    $(ele).addClass("selected");
+    emptySheet();
+    selectedSheet = $(ele).text();
+    loadSheet();
+}
