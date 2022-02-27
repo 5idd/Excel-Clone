@@ -131,13 +131,19 @@ $('.input-cell').click(function (e) {
     } else {
         // console.log("hi");
         $('.input-cell.selected').removeClass('selected')
+        $('.input-cell.top-cell-selected').removeClass('top-cell-selected')
+        $('.input-cell.bottom-cell-selected').removeClass(
+            'bottom-cell-selected'
+        )
+        $('.input-cell.left-cell-selected').removeClass('left-cell-selected')
+        $('.input-cell.right-cell-selected').removeClass('right-cell-selected')
         $(this).addClass('selected')
     }
     changeHeader(this)
 })
 
 function changeHeader(ele) {
-    console.log('Hello')
+    // console.log('Hello')
     let [rowId, colId] = getRowCol(ele)
     let cellInfo = defaultProperties
     if (
