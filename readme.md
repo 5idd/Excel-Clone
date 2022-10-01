@@ -31,6 +31,6 @@
 Linkedin: [https://www.linkedin.com/in/siddharth-saurav/](https://www.linkedin.com/in/siddharth-saurav/)
 <br />
 
-###### Email: siddharth.saurav.che19@itbhu.ac.in
+###### Email: siddharth.saurav.che19@iitbhu.ac.in
 
 ### Thank you!
