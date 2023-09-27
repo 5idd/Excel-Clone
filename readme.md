@@ -6,7 +6,7 @@
 
 ### This is an excel clone built using HTML, CSS, JQuery.
 
-### Project live at - [https://5idd.github.io/Excel-Clone/](https://5idd.github.io/Excel-Clone/)
+### Project live at - [https://sidsaurav.github.io/Excel-Clone/](https://sidsaurav.github.io/Excel-Clone/)
 
 ### Features -
 
